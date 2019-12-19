@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'myFirstDjango.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'data_science',
-        'USER': 'hadoop',
-        'PASSWORD': 'bumsoft!@',
+        'NAME': 'django',
+        'USER': 'slykid',
+        'PASSWORD': 'Magic1412!',
         'HOST': 'localhost',
         'PORT': '3306'
     }
