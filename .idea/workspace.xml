@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9118d5b-acba-48bd-8edf-495d7d2d6491" name="Default Changelist" comment="">
+    <list default="true" id="f9118d5b-acba-48bd-8edf-495d7d2d6491" name="Default Changelist" comment="FastCampus Online Djanago : Chapter 7. 데이터베이스 관리">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fc_community/board/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/fc_community/board/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fc_community/fc_community/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/fc_community/fc_community/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myFirstDjango/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myFirstDjango/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/myFirstDjango/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/myFirstDjango/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,21 +11,24 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fc_community/fcuser/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="399">
+              <caret line="21" column="81" selection-start-line="21" selection-start-column="81" selection-end-line="21" selection-end-column="81" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fc_community/fc_community/settings.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fc_community/fcuser/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
-              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+              <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,9 +53,10 @@
         <option value="$PROJECT_DIR$/fc_community/board/templates/test.html" />
         <option value="$PROJECT_DIR$/mysite/myFirstDjango/urls.py" />
         <option value="$PROJECT_DIR$/fc_community/board/models.py" />
-        <option value="$PROJECT_DIR$/fc_community/fcuser/models.py" />
         <option value="$PROJECT_DIR$/fc_community/fc_community/settings.py" />
         <option value="$PROJECT_DIR$/mysite/myFirstDjango/settings.py" />
+        <option value="$PROJECT_DIR$/fc_community/fcuser/admin.py" />
+        <option value="$PROJECT_DIR$/fc_community/fcuser/models.py" />
       </list>
     </option>
   </component>
@@ -97,25 +97,13 @@
               <item name="Django" type="b2602c69:ProjectViewProjectNode" />
               <item name="Django" type="462c0819:PsiDirectoryNode" />
               <item name="fc_community" type="462c0819:PsiDirectoryNode" />
-              <item name="fcuser" type="462c0819:PsiDirectoryNode" />
+              <item name="fc_community" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Django" type="b2602c69:ProjectViewProjectNode" />
               <item name="Django" type="462c0819:PsiDirectoryNode" />
               <item name="fc_community" type="462c0819:PsiDirectoryNode" />
               <item name="fcuser" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Django" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Django" type="462c0819:PsiDirectoryNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Django" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Django" type="462c0819:PsiDirectoryNode" />
-              <item name="mysite" type="462c0819:PsiDirectoryNode" />
-              <item name="myFirstDjango" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -181,14 +169,20 @@
       <option name="project" value="LOCAL" />
       <updated>1567928979777</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="FastCampus Online Djanago : Chapter 7. 데이터베이스 관리">
+      <created>1576765262817</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1576765262817</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -199,7 +193,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32968238" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32968238" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32968238" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32968238" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32858709" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -210,7 +204,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2019.09.07 make Repository" />
     <MESSAGE value="FastCampus Online Djanago : Chapter 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="FastCampus Online Djanago : Chapter 1" />
+    <MESSAGE value="FastCampus Online Djanago : Chapter 7. 데이터베이스 관리" />
+    <option name="LAST_COMMIT_MESSAGE" value="FastCampus Online Djanago : Chapter 7. 데이터베이스 관리" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/mysite/create.py" />
@@ -238,13 +233,6 @@
     <entry file="file://$PROJECT_DIR$/fc_community/board/views.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/fc_community/fcuser/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/myFirstDjango/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -257,8 +245,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fc_community/fc_community/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
+        <state relative-caret-position="-133">
           <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fc_community/fc_community/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#636#668#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fc_community/fcuser/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fc_community/fcuser/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="81" selection-start-line="21" selection-start-column="81" selection-end-line="21" selection-end-column="81" />
         </state>
       </provider>
     </entry>
