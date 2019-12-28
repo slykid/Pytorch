@@ -14,8 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('fcuser/', include('fcuser.urls')) # fcuser 이하의 모든 URL들은
+                                                # fcuser 폴더 내의 urls.py 파일로 관리하겠다는 의미
 ]
