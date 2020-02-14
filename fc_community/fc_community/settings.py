@@ -130,4 +130,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+# Static을 설정하기 위한 변수
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [    # 반드시 리스트 형식이어야함
+    os.path.join(BASE_DIR, 'static'),
+]
