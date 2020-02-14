@@ -17,8 +17,14 @@ def register(request):
         # password = request.POST["password"]
         # re_password = request.POST["re-password"]
 
-        # ex 4. 입력받은 값에 대한 예외처리 구현
-        username = request.POST.get("username", None)  # None 대신 거짓에 대한 값이어도 상관없음
+        # # ex 4. 입력받은 값에 대한 예외처리 구현
+        # username = request.POST.get("username", None)  # None 대신 거짓에 대한 값이어도 상관없음
+        # password = request.POST.get("password", None)
+        # re_password = request.POST.get("re-password", None)
+
+        # Quiz. 이메일 필드 추가하기
+        username = request.POST.get("username", None)
+        useremail = request.POST.get("useremail", None)
         password = request.POST.get("password", None)
         re_password = request.POST.get("re-password", None)
 
@@ -58,15 +64,27 @@ def register(request):
                                                     # folder명/register.html 형태로 작성
 
         # ex 4. 입력받은 값에 대한 예외처리 구현
+        # res_data = {}
+        #
+        # if not (username and password and re_password):
+        #     res_data['error'] = "모든 값을 입력해야합니다."
+        # elif password != re_password:
+        #     res_data['error'] = "비밀번호가 다릅니다."
+        # else:
+        #     # 객체 생성 및 DB에 저장
+        #     fcuser = Fcuser(username=username, password=make_password(password))
+        #     fcuser.save()
+
+        # Quiz . 이메일 필드 추가하기
         res_data = {}
 
-        if not (username and password and re_password):
+        if not (username and useremail and password and re_password):
             res_data['error'] = "모든 값을 입력해야합니다."
         elif password != re_password:
             res_data['error'] = "비밀번호가 다릅니다."
         else:
             # 객체 생성 및 DB에 저장
-            fcuser = Fcuser(username=username, password=make_password(password))
+            fcuser = Fcuser(username=username, password=make_password(password), useremail=useremail)
             fcuser.save()
 
         return render(request, 'register.html', res_data)

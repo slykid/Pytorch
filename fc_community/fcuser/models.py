@@ -3,9 +3,10 @@ from django.db import models
 # Create your models here.
 class Fcuser(models.Model):
     # id 는 자동으로 생성됨
-    username = models.CharField(max_length=32, verbose_name='사용자명')     # 사용자명
-    password = models.CharField(max_length=64, verbose_name='비밀번호')     # 비밀번호
-    registerd_dttm = models.DateTimeField(auto_now_add=True, verbose_name='등록시간')
+    username = models.CharField(max_length=32, verbose_name='사용자명')                       # 사용자명
+    useremail = models.EmailField(max_length=128, verbose_name='사용자이메일')               # 사용자 이메일
+    password = models.CharField(max_length=64, verbose_name='비밀번호')                      # 비밀번호
+    registerd_dttm = models.DateTimeField(auto_now_add=True, verbose_name='등록시간')       # 등록시간
     # 등록시간 / auto_now_add 옵션 : 객체(클래스)가 저장되는 시점의 시간으로 기록됨
 
     # class 객체가 문자열로 변환되는 경우 어떤 방식으로 변환할 지를 결정하는 내장함수

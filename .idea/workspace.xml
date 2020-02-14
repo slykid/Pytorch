@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f9118d5b-acba-48bd-8edf-495d7d2d6491" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fc_community/fcuser/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/fc_community/fcuser/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fc_community/fcuser/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/fc_community/fcuser/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fc_community/fcuser/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/fc_community/fcuser/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fc_community/fcuser/templates/register.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+            <state relative-caret-position="454">
+              <caret line="54" column="7" lean-forward="true" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -24,12 +27,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fc_community/fcuser/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="31" column="49" lean-forward="true" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+            <state relative-caret-position="454">
+              <caret line="88" selection-start-line="88" selection-end-line="88" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
-                <marker date="1577964837718" expanded="true" signature="782:1016" ph="..." />
+                <marker date="1581643893524" expanded="true" signature="1108:1342" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fc_community/fcuser/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -57,11 +69,11 @@
         <option value="$PROJECT_DIR$/fc_community/fc_community/settings.py" />
         <option value="$PROJECT_DIR$/mysite/myFirstDjango/settings.py" />
         <option value="$PROJECT_DIR$/fc_community/fcuser/admin.py" />
-        <option value="$PROJECT_DIR$/fc_community/fcuser/models.py" />
         <option value="$PROJECT_DIR$/fc_community/fcuser/urls.py" />
         <option value="$PROJECT_DIR$/fc_community/fc_community/urls.py" />
-        <option value="$PROJECT_DIR$/fc_community/fcuser/templates/register.html" />
+        <option value="$PROJECT_DIR$/fc_community/fcuser/models.py" />
         <option value="$PROJECT_DIR$/fc_community/fcuser/views.py" />
+        <option value="$PROJECT_DIR$/fc_community/fcuser/templates/register.html" />
       </list>
     </option>
   </component>
@@ -218,7 +230,21 @@
       <option name="project" value="LOCAL" />
       <updated>1577964959074</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="FastCampus Online Djanago : Chapter 8. View &amp; Template">
+      <created>1581643163596</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1581643163596</updated>
+    </task>
+    <task id="LOCAL-00011" summary="FastCampus Online Djanago : Chapter 8. View &amp; Template">
+      <created>1581643497509</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1581643497509</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -287,13 +313,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fc_community/fcuser/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="81" selection-start-line="21" selection-start-column="81" selection-end-line="21" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fc_community/fcuser/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -331,13 +350,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fc_community/fcuser/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fc_community/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -348,13 +360,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/fc_community/fcuser/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fc_community/fcuser/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="54" column="7" lean-forward="true" selection-start-line="54" selection-start-column="7" selection-end-line="54" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fc_community/fcuser/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="31" column="49" lean-forward="true" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+        <state relative-caret-position="454">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <marker date="1577964837718" expanded="true" signature="782:1016" ph="..." />
+            <marker date="1581643893524" expanded="true" signature="1108:1342" ph="..." />
           </folding>
         </state>
       </provider>
