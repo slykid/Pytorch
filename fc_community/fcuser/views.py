@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import make_password  # check_password 를 사용해 비밀번호 확인도 가능함
 
 from .models import Fcuser
 
@@ -18,7 +18,7 @@ def register(request):
         # re_password = request.POST["re-password"]
 
         # ex 4. 입력받은 값에 대한 예외처리 구현
-        username = request.POST.get("username", None)
+        username = request.POST.get("username", None)  # None 대신 거짓에 대한 값이어도 상관없음
         password = request.POST.get("password", None)
         re_password = request.POST.get("re-password", None)
 
