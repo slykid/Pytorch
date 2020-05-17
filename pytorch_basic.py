@@ -321,3 +321,4 @@ for epoch in range(n_epochs):
 
     if avg_loss < 0.001:
         break
+
