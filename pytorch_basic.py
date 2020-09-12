@@ -1,5 +1,10 @@
 # 2. torch 사용법
 import torch
+import numpy as np
+from PIL import Image
+import matplotlib.pyplot as plt
+
+from sklearn.datasets import load_boston
 
 # torch 버전 확인
 torch.__version__
@@ -51,6 +56,32 @@ print(x)
 #         [1., 1., 1.],
 #         [1., 1., 1.],
 #         [1., 1., 1.]], dtype=torch.float64)
+
+# Tensor의 종류
+## 0차원 텐서
+x = torch.rand(10)
+x.size()
+
+## 1차원 텐서
+y = torch.FloatTensor([21, 23, 25, 30.4, 24.0])
+y.size()
+
+## 2차원 텐서
+boston = load_boston()
+### sklearn import 중 DLL 에러 발생 시 : scipy, numpy 삭제 후 재설치
+z = torch.from_numpy(boston.data)
+z.size()
+
+## 3차원 텐서
+image = np.array(Image.open('image/panda.jpg').resize((224,224)))
+image_tensor = torch.from_numpy(image)
+image_tensor.size()
+
+## 텐서 슬라이스
+sales = torch.FloatTensor([1000.0, 323.2, 333.5, 555.6, 1000.0, 323.2, 333.5, 555.6])
+sales[:5]
+
+plt.imshow(image_tensor[25:175, 60:130, 0].numpy())
 
 x = torch.randn_like(torch.empty(5, 3), dtype=torch.float)
 print(x)
@@ -138,187 +169,79 @@ if torch.cuda.is_available():
 print(device)
 
 # 2. Autograd
+import numpy
 import torch
+from torch.autograd import Variable
 
-x = torch.ones(2, 2, requires_grad=True)
-print(x)
+x = Variable(torch.ones(2, 2), requires_grad=True)
+y = x.mean()
 
-## function class
-y = x + 2
-print(y.grad_fn)
+y.backward()
 
-z = y * y * 3
-out = z.mean()
+x.grad
+x.grad_fn  # 출력 없음
+x.data
+y.grad_fn
 
-print(z.out)
-print(z.grad_fn)
 
-## requires_grad_
-a = torch.randn(2, 2)
-a = ((a * 3) / (a - 1))
-print(a.requires_grad)  # 별도로 입력값을 설정하지 않았으므로, 기본 값인 False 를 사용
+# 3. 저수준 API 신경망
+import numpy as np
+import pandas as pd
 
-a.requires_grad_(True)  # 입력값을 True로 설정했기 때문에 출력 시 requires_grad 옵션 값이 True로 설정됨
-print(a.requires_grad)
-
-b = (a * a).sum()
-print(b.grad_fn)
-
-## feedforward
 import torch
+from torch.autograd import Variable
 
-# torch 버전 확인
-torch.__version__
+## 데이터 생성 함수
+def get_data():
+    data_x = np.asarray([3.3, 4.4, 5.5, 6.71, 6.93, 4.168, 9.779, 6.18, 7.59, 2.17, 7.04, 10.7, 5.314, 5.75, 9.3, 3.1, 5.6])
+    data_y = np.asarray([1.7, 2.76, 2.09, 3.19, 1.69, 1.573, 3.35, 2.6, 2.54, 1.32, 2.94, 3.675, 1.65, 2.904, 2.53, 2.97, 1.6])
+    data_type = torch.FloatTensor
 
-x = torch.FloatTensor(2, 2)
-y = torch.FloatTensor(2, 2)
-y.requires_grad_(True)
+    x = Variable(torch.from_numpy(data_x).type(data_type), requires_grad=False).view(17, 1)
+    y = Variable(torch.from_numpy(data_y).type(data_type), requires_grad=False).view(17)
 
-z = (x + y) + torch.FloatTensor(2, 2)
+    return x, y
 
-# with torch.no_grad():
-#     z = (x + y) + torch.FloatTensor(2, 2)
+## 가중치 생성 함수
+def get_weight():
+    w = Variable(torch.randn(1), requires_grad=True)
+    b = Variable(torch.randn(1), requires_grad=True)
 
-## simple linear function
-def linear(x, W, b):
-    y = torch.mm(x, W) + b
-
-    return y
-
-x = torch.FloatTensor(16, 10)
-W = torch.FloatTensor(10, 5)
-b = torch.FloatTensor(5)
-
-y = linear(x, W, b)
-print(y)
-
-## nn.Module
-import torch.nn as nn
-
-## proto_type
-# class myLinear(nn.Module):
-#     def __init__(self, input_size, output_size):
-#         super().__init__()
-#         self.W = nn.Parameter(torch.FloatTensor(input_size, output_size), requires_grad=True)
-#         self.b = nn.Parameter(torch.FloatTensor(output_size), requires_grad=True)
-#
-#     def forward(self, x):
-#         y = torch.mm(x, self.W) + self.b
-#         return y
-
-# final version
-class myLinear(nn.Module):
-    def __init__(self, input_size, output_size):
-        super(myLinear, self).__init__()
-
-        self.linear = nn.Linear(input_size, output_size)
-
-    def forward(self, x):
-        y = self.linear(x)
-
-        return y
+    return w, b
 
 
-x = torch.FloatTensor(16, 10)
-Linear = myLinear(10, 5)
-y = Linear(x)
+## 신경망 모델
+def network_api():
+    y_pred = torch.matmul(x, w) + b
 
-print(y)
+    return y_pred
 
-## Check param
-params = [p.size() for p in Linear.parameters()]
-print(params)
+def loss_fn(y, y_pred):
+    loss = (y - y_pred).pow(2).sum()
+    for param in [w, b]:
+        if param.grad is not None:
+            param.grad.data.zero_()
 
-## BackPropagation
-realValue = 100
-
-x = torch.FloatTensor(16, 10)
-linear = myLinear(10, 5)
-y = Linear(x)
-
-loss = (realValue - y.sum())**2
-loss.backward()
-
-linear.eval()
-
-linear.train()
-
-## Make Model : Linear Regression
-import torch
-import torch.nn as nn
-
-# 모델 선언
-class MyModel(nn.Module):
-
-    # 초기화
-    def __init__(self, input_size, output_size):
-        super(MyModel, self).__init__()
-        self.linear = nn.Linear(input_size, output_size)
-
-    # 로직 정의
-    def forward(self, x):
-        # self.linear.cuda()  # GPU 사용 시 해제 후 사용 가능
-        y = self.linear(x)
-
-        return y
-
-# 실제 값 계산 함수 정의
-def ground_truth(x):
-    return 3 * x[:, 0] + x[:, 1] - 2 * x[:, 2]
-
-# 학습 함수 정의
-def train(model, x, y, opt):
-
-    # 경사하강법 파라미터 초기화
-    opt.zero_grad()
-
-    # 모델 학습 (FeedForward)
-    y_pred = model(x)
-
-    # Loss 계산 (MSE)
-    loss = ((y - y_pred) ** 2).sum() / x.size(0)
-
-    # 역전파 (BackPropagation)
     loss.backward()
-
-    # 최적화 수행
-    opt.step()
 
     return loss.data
 
-# 하이퍼파라미터 정의
-batch_size = 1   # 배치 크기
-n_epochs = 1000  # 학습 횟수
-n_iter = 1000    # 학습 1회 시 반복 횟수
+## 최적화
+def optimize(learning_rate):
+    w.data -= learning_rate * w.grad.data
+    b.data -= learning_rate * b.grad.data
 
-model = MyModel(3, 3)
-opt = torch.optim.SGD(model.parameters(), lr=0.001, momentum=0.1)  # SGD
+x, y = get_data()
+w, b = get_weight()
+learning_rate = 0.01
 
-# 모델 확인
-print(model)
+print(w, b)
 
-# 학습
-for epoch in range(n_epochs):
-    avg_loss = 0  # MSE
+y_pred = network_api()
+loss_fn(y, y_pred)
+optimize(learning_rate)
 
-    for i in range(n_iter):
-        x = torch.rand(batch_size, 3)
-        y = ground_truth(x.data)
+print(w, b)
 
-        loss = train(model, x, y, opt)
 
-        avg_loss += loss
-        avg_loss = avg_loss / n_iter
-
-    x_valid = torch.FloatTensor([[.3, .2, .1]])
-    y_valid = ground_truth(x_valid.data)
-
-    model.eval()
-    y_pred = model(x_valid)
-    model.train
-
-    print('Loss :  %.3f, Real : %.3f, Pred : %.3f' % (avg_loss, y_valid[0], y_pred[0, 0]))
-
-    if avg_loss < 0.001:
-        break
 
