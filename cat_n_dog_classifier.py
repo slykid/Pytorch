@@ -208,7 +208,7 @@ def train_model(model, criterion, optimizer, scheduler, num_epochs=5):
     model.load_state_dict(best_model_wts)
     return model
 
-model = train_model(model, criterion, optimizer, scheduler, num_epochs=24)
+model = train_model(model, criterion, optimizer, scheduler, num_epochs=25)
 
 f.close()
 print("Close File")
