@@ -6,7 +6,7 @@ import torch.optim as optim
 
 from model import ImageClassifier
 from trainer import Trainer
-from dataloder import load_mnist
+from dataloader import load_mnist
 
 def define_argparser():
     # 필요한 인자들 선언
