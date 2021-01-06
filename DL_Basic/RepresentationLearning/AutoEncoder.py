@@ -2,6 +2,11 @@
 # 1. File - Settings - Project Structure 에서 Source 로 폴더 추가하기
 # 2. 폴더 우클릭 - Mark Directory as 에서 Source로 폴더 추가하기
 
+# 라이브러리 간의 충돌이 발생하는 것을 방지하기 위함
+# 딥러닝의 경우 발생할 수 있는 이슈이므로 추가하는 습관을 들일 것
+import os
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
+
 import numpy as np
 from matplotlib import pyplot as plt
 
