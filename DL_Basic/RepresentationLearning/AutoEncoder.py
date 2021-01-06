@@ -4,6 +4,7 @@
 
 # 라이브러리 간의 충돌이 발생하는 것을 방지하기 위함
 # 딥러닝의 경우 발생할 수 있는 이슈이므로 추가하는 습관을 들일 것
+# OMP: Error #15: Initializing libiomp5md.dll, but found libiomp5md.dll already initialized.
 import os
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
