@@ -56,7 +56,6 @@ criterion = nn.MSELoss()
 trainer = Trainer(model, optimizer, criterion)
 trainer.train((x_train, x_train), (x_valid, x_valid), config)  # Encoder - Decoder 구조이기 때문에 x 에 대한 것만 사용
 
-
 # Model Test
 with torch.no_grad():
     import random
