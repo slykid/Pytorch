@@ -116,6 +116,42 @@ print(res)
 print(res[:, 1])
 # tensor([0.7899, 0.4686, 0.6827, 0.4240, 1.7310])
 
+# broadcast
+m1 = torch.FloatTensor([[3., 3.]])
+m2 = torch.FloatTensor([[2., 2.]])
+print(m1 + m2)
+
+m1 = torch.FloatTensor([[3., 3.]])
+m2 = torch.FloatTensor([2])
+print(m1 + m2)
+
+v1 = torch.FloatTensor([[1, 2]])
+v2 = torch.FloatTensor([[3], [4]])
+print(v1 + v2)
+
+# squeeze & unsqueeze
+## squeeze
+ft = torch.FloatTensor([[0], [1], [2]])
+print(ft)
+print(ft.shape)
+
+print(ft.squeeze())
+print(ft.squeeze().shape)
+
+## unsqueeze
+ft = torch.FloatTensor([0, 1, 2])
+print(ft.shape)
+
+print(ft.unsqueeze(0))  # 0번째에 1인 차원을 추가한다.
+print(ft.unsqueeze(0).shape)
+
+# concatenate
+x = torch.FloatTensor([[1, 2], [3, 4]])
+y = torch.FloatTensor([[5, 6], [7, 8]])
+print(torch.cat([x, y], dim=0))
+print(torch.cat([x, y], dim=1))
+
+
 # view()
 # - tensor의 크기, 모양을 변경하는 경우에
 x = torch.randn(4, 4)
