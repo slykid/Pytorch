@@ -1,30 +1,26 @@
 from glob import glob
 import os
-import sys
 import time
 import numpy as np
-import shutil
 
 import matplotlib.pyplot as plt
 
 import torch
 import torch.nn as nn
 from torch import optim
-
 from torch.autograd import Variable
-
 from torch.optim import lr_scheduler
-
 from torchvision import transforms
 from torchvision import models
 from torchvision.datasets import ImageFolder
-from torchvision.utils import make_grid
 
 if os.path.isdir('logs') is False:
     os.mkdir('logs')
 f = open('logs/20200912.txt', 'w')
 
-path = 'image\\dogs-vs-cats\\dogandcat'  # Windows 이므로 / 대신 \\ 으로 디렉터리 구분함
+os.environ['KMP_DUPLICATE_LIB_OK']='True'  # matplotlib + GPU 사용 시, 꼭 추가 및 실행해줄 것!
+
+path = 'data\\dogs_vs_cats\\org'  # Windows 이므로 / 대신 \\ 으로 디렉터리 구분함
 file = glob(os.path.join(path, "*/*.jpg"))  # glob 함수 : 특정 폴더 이하의 모든 파일을 반환함
 
 num_shape = len(file)
@@ -34,11 +30,11 @@ f.write('Total number of images: {}'.format(num_shape))
 if num_shape > 0:
     shuffle = np.random.permutation(num_shape)
 
-    os.mkdir(os.path.join(path, 'valid'))
-
-    for i in ['train', 'valid']:
-        for folder in ['dog\\', 'cat\\']:
-            os.mkdir(os.path.join(path, i, folder))
+    # os.mkdir(os.path.join(path, 'valid'))
+    #
+    # for i in ['train', 'valid']:
+    #     for folder in ['dog\\', 'cat\\']:
+    #         os.mkdir(os.path.join(path, i, folder))
 
     # valid
     for i in shuffle[:2000]:
@@ -212,5 +208,3 @@ model = train_model(model, criterion, optimizer, scheduler, num_epochs=25)
 
 f.close()
 print("Close File")
-
-
