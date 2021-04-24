@@ -9,6 +9,9 @@
       <sourceFolder url="file://$MODULE_DIR$/DL_Basic/1_MNIST_Classification" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/NLP" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DL_Basic/3_Probablistic_Perspective" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Basic/1_How_to_use_torch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Basic/2_nn_Module" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Basic/3_prepare_training" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/data" />
       <excludeFolder url="file://$MODULE_DIR$/image" />
