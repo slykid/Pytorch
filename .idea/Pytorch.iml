@@ -4,10 +4,8 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/DL_Basic/2_RepresentationLearning" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Basic" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/champollion-1.2" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DL_Basic" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DL_Basic/1_MNIST_Classification" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/NLP" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/DL_Basic/3_Probablistic_Perspective" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Basic/1_How_to_use_torch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Basic/2_nn_Module" isTestSource="false" />
@@ -15,7 +13,6 @@
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/data" />
       <excludeFolder url="file://$MODULE_DIR$/image" />
-      <excludeFolder url="file://$MODULE_DIR$/logs" />
       <excludeFolder url="file://$MODULE_DIR$/.idea" />
     </content>
     <orderEntry type="jdk" jdkName="Pytorch" jdkType="Python SDK" />

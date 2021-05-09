@@ -6,14 +6,23 @@ from glob import glob
 from torch.utils.data import Dataset
 
 class DogCatDataset(Dataset):
-    def __init__(self, root_path, transform=None):
+    def __init__(self, root_path, mode, image_kind, transform=None):
+        """
+        :param root_path: image path
+        :param mode: train or valid
+        :param image_kind: cat or dag
+        :param transform: image transform
+        """
+
         self.root_path = root_path
         self.transform = transform
+        self.mode = mode
+        self.image_kind = image_kind
 
-        for t in ['train', 'valid']:
-            for folder in ['dog', 'cat']:
-                # 폴더가 없는 경우
-                if os.path.isdir(os.path.join(self.root_path, t, folder)) is False:
+        # 폴더가 없는 경우
+        if os.path.isdir(os.path.join(self.root_path, mode, image_kind)) is False:
+            for t in ['train', 'valid']:
+                for folder in ['dog', 'cat']:
                     os.makedirs(os.path.join(self.root_path, t, folder))
                     self.files = glob(os.path.join(self.root_path, "*.jpg"))
                     self.size = len(self.files)
@@ -34,11 +43,11 @@ class DogCatDataset(Dataset):
                             image = self.files[i].split('\\')[-1]
                             os.rename(self.files[i], os.path.join(self.root_path, 'train', folder, image))
 
-                # 폴더가 생성된 경우
-                else:
-                    self.files = glob(os.path.join(self.root_path, t, "*", "*.jpg"))
-                    self.size = len(self.files)
-                    print(self.size)
+        # 폴더가 생성된 경우
+        else:
+            self.files = glob(os.path.join(self.root_path, mode, image_kind, "*.jpg"))
+            self.size = len(self.files)
+            print(self.size)
 
     def __len__(self):
         return self.size
